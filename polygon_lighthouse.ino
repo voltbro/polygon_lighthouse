@@ -16,7 +16,7 @@ Atm_button button;
 const unsigned int led_pins[3] = {10,11,12};
 const unsigned int button_pin = 2;
 
-byte ir_signals[3] = {0xa70, 0xa80, 0xa90};
+byte ir_signals[3] = {0x70, 0x80, 0x90};
 byte ir_signal = ir_signals[0];
 
 void step_callback( int idx, int v, int up ) {
@@ -32,7 +32,7 @@ void step_callback( int idx, int v, int up ) {
 }
 
 void timer_callback( int idx, int v, int up ) {
-  IRSender.send(SONY,ir_signal, 12);
+  IRSender.send(SONY,ir_signal, 8);
 }
 
 void setup() {
